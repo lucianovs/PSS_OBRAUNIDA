@@ -90,7 +90,9 @@ Module ModPrincipal
     Public Function LerUsuario(ByVal fLgiUsu As String, Optional fPswUsu As String = "") As String
         Dim cQuery As String
         Dim dtUsuario As DataTable = New DataTable("ESI000")
+        LerUsuario = ""
 
+        If Not g_ConnectBanco.state = 1 Then Exit Function
         cQuery = "SELECT SI000_LGIUSU, SI000_NOMUSU, SI000_PASLGI, SI000_DATEXP, SI000_ALTPAS " & _
             "FROM ESI000 where SI000_LGIUSU = '" & fLgiUsu & "'"
 
@@ -290,6 +292,9 @@ Module ModPrincipal
     Public Function getCodModulo(ByVal fNomeModulo As String) As Integer
         Dim sQuery As String
         Dim dtModulo As DataTable = New DataTable("ESI004")
+
+        getCodModulo = 0
+        If Not g_ConnectBanco.state = 1 Then Exit Function
 
         sQuery = "SELECT SI004_CODMOD FROM ESI004 where SI004_DESMOD = '" & Trim(fNomeModulo) & "'"
 

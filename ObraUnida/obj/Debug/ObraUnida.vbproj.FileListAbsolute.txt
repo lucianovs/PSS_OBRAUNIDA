@@ -1,2 +1,1 @@
 C:\Users\Luciano\AppData\Local\Temporary Projects\ObraUnida\bin\Debug\ObraUnida.exe.config
-C:\Fontes\SSVP_Projeto\ObraUnida\ObraUnida\bin\Debug\ObraUnida.exe.config
