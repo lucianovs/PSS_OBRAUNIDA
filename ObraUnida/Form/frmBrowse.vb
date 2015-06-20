@@ -206,7 +206,7 @@ Public Class frmBrowse
         frmType.InvokeMember("Show", Reflection.BindingFlags.InvokeMethod, Nothing, frm, Nothing)
 
         g_AtuBrowse = False
-        timerRefresh.Enabled = True
+        timerRefresh.Enabled = True 'voltar pra True
 
         'CType(frm, Form).MdiParent = mdiDesktop
         'CType(frm, Form).Modal = True

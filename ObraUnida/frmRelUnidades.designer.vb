@@ -70,7 +70,7 @@ Partial Class frmRelUnidades
         '
         'btnLocUnidade
         '
-        Me.btnLocUnidade.BackgroundImage = Global.ObraUnida.My.Resources.Resources.AllDay_ru_Search
+        Me.btnLocUnidade.BackgroundImage = Global.OBRAUNIDA.My.Resources.Resources.AllDay_ru_Search
         Me.btnLocUnidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLocUnidade.Location = New System.Drawing.Point(509, 45)
         Me.btnLocUnidade.Name = "btnLocUnidade"

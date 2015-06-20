@@ -135,4 +135,18 @@ Public Class frmPrincipal
         frmBrowse_Usuario.Show()
 
     End Sub
+
+    Private Sub ObraUnidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuTipoObraUnida.Click
+
+        Dim frmBrowse_TipoObraUnida As frmBrowse = New frmBrowse("EUN009", "frmTipoObraUnida")
+
+        frmBrowse_TipoObraUnida.MdiParent = Me
+        frmBrowse_TipoObraUnida.Tag = menuTipoObraUnida.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_TipoObraUnida.Text = menuTipoObraUnida.Text
+        frmBrowse_TipoObraUnida.Show()
+
+
+
+
+    End Sub
 End Class

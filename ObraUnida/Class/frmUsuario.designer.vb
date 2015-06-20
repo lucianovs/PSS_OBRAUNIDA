@@ -382,7 +382,7 @@ Partial Class frmUsuario
         '
         'btnLocColaborador
         '
-        Me.btnLocColaborador.BackgroundImage = Global.ObraUnida.My.Resources.Resources.AllDay_ru_Search
+        Me.btnLocColaborador.BackgroundImage = Global.OBRAUNIDA.My.Resources.Resources.AllDay_ru_Search
         Me.btnLocColaborador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLocColaborador.Location = New System.Drawing.Point(477, 280)
         Me.btnLocColaborador.Name = "btnLocColaborador"

@@ -24,6 +24,7 @@ Partial Class frmPrincipal
     Private Sub InitializeComponent()
         Me.MenuPrincipal = New System.Windows.Forms.MenuStrip()
         Me.menuCadastro = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuTipoObraUnida = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuProcessos = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuConsultas = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuRelatorios = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,9 +51,16 @@ Partial Class frmPrincipal
         '
         'menuCadastro
         '
+        Me.menuCadastro.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuTipoObraUnida})
         Me.menuCadastro.Name = "menuCadastro"
         Me.menuCadastro.Size = New System.Drawing.Size(71, 20)
         Me.menuCadastro.Text = "&Cadastros"
+        '
+        'menuTipoObraUnida
+        '
+        Me.menuTipoObraUnida.Name = "menuTipoObraUnida"
+        Me.menuTipoObraUnida.Size = New System.Drawing.Size(245, 22)
+        Me.menuTipoObraUnida.Text = "Tipo de Obras Unidas / Especiais"
         '
         'menuProcessos
         '
@@ -125,7 +133,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuPrincipal)
         Me.MainMenuStrip = Me.MenuPrincipal
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmPrincipal"
         Me.Text = "Descrição do módulo"
         Me.MenuPrincipal.ResumeLayout(False)
@@ -146,5 +154,6 @@ Partial Class frmPrincipal
     Friend WithEvents menuRelatorios As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Ajuda As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents menuTipoObraUnida As System.Windows.Forms.ToolStripMenuItem
 
 End Class
