@@ -27,8 +27,10 @@
         'Ler o Usuário e Validar o Acesso
         sNomeUsuario = LerUsuario(ClassCrypt.Decrypt(g_Login))
 
+        'sNomeUsuario = "Gilberto"
+
         If sNomeUsuario <> "" Then
-            Me.Text = "Modulo Tamplate - Usuário: " & sNomeUsuario
+            Me.Text = "Modulo Template - Usuário: " & sNomeUsuario
             GravarDadosIni("CONEXAO", "ConnectString", g_ConnectString)
         Else
             Application.Exit()

@@ -43,86 +43,89 @@ Partial Class frmPrincipal
         Me.MenuPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.MenuPrincipal.MdiWindowListItem = Me.menuSistema
         Me.MenuPrincipal.Name = "MenuPrincipal"
-        Me.MenuPrincipal.Size = New System.Drawing.Size(996, 28)
+        Me.MenuPrincipal.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuPrincipal.Size = New System.Drawing.Size(747, 24)
         Me.MenuPrincipal.TabIndex = 0
         Me.MenuPrincipal.Text = "MenuPrincipal"
         '
         'menuCadastro
         '
         Me.menuCadastro.Name = "menuCadastro"
-        Me.menuCadastro.Size = New System.Drawing.Size(86, 24)
+        Me.menuCadastro.Size = New System.Drawing.Size(71, 20)
         Me.menuCadastro.Text = "&Cadastros"
         '
         'menuProcessos
         '
         Me.menuProcessos.Name = "menuProcessos"
-        Me.menuProcessos.Size = New System.Drawing.Size(85, 24)
+        Me.menuProcessos.Size = New System.Drawing.Size(71, 20)
         Me.menuProcessos.Text = "Processos"
         '
         'menuConsultas
         '
         Me.menuConsultas.Name = "menuConsultas"
-        Me.menuConsultas.Size = New System.Drawing.Size(84, 24)
+        Me.menuConsultas.Size = New System.Drawing.Size(71, 20)
         Me.menuConsultas.Text = "Consultas"
         '
         'menuRelatorios
         '
         Me.menuRelatorios.Name = "menuRelatorios"
-        Me.menuRelatorios.Size = New System.Drawing.Size(88, 24)
+        Me.menuRelatorios.Size = New System.Drawing.Size(71, 20)
         Me.menuRelatorios.Text = "&Relatórios"
         '
         'menuSistema
         '
         Me.menuSistema.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuConfiguracoes, Me.ToolStripMenuItem1, Me.menuUsuarios, Me.Sair})
         Me.menuSistema.Name = "menuSistema"
-        Me.menuSistema.Size = New System.Drawing.Size(73, 24)
+        Me.menuSistema.Size = New System.Drawing.Size(60, 20)
         Me.menuSistema.Text = "&Sistema"
         '
         'menuConfiguracoes
         '
         Me.menuConfiguracoes.Name = "menuConfiguracoes"
-        Me.menuConfiguracoes.Size = New System.Drawing.Size(173, 24)
+        Me.menuConfiguracoes.Size = New System.Drawing.Size(151, 22)
         Me.menuConfiguracoes.Text = "Configurações"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(170, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(148, 6)
         '
         'menuUsuarios
         '
         Me.menuUsuarios.Name = "menuUsuarios"
-        Me.menuUsuarios.Size = New System.Drawing.Size(173, 24)
+        Me.menuUsuarios.Size = New System.Drawing.Size(151, 22)
         Me.menuUsuarios.Text = "Usuários"
         '
         'Sair
         '
         Me.Sair.Name = "Sair"
-        Me.Sair.Size = New System.Drawing.Size(173, 24)
+        Me.Sair.Size = New System.Drawing.Size(151, 22)
         Me.Sair.Text = "Sair"
         '
         'Ajuda
         '
         Me.Ajuda.Name = "Ajuda"
-        Me.Ajuda.Size = New System.Drawing.Size(60, 24)
+        Me.Ajuda.Size = New System.Drawing.Size(50, 20)
         Me.Ajuda.Text = "&Ajuda"
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 456)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 366)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(996, 22)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(747, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'frmPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(996, 478)
+        Me.ClientSize = New System.Drawing.Size(747, 388)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuPrincipal)
         Me.MainMenuStrip = Me.MenuPrincipal
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmPrincipal"
         Me.Text = "Descrição do módulo"
         Me.MenuPrincipal.ResumeLayout(False)
