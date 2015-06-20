@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ObraUnida", "ObraUnida.vbproj", "{A4F7B2CB-9B36-4D87-ABE3-E9F943FDA67A}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ESTOQUE", "..\..\PSS_ESTOQUE\ESTOQUE.vbproj", "{B14F6644-AA38-45B2-BE86-ABA9FC8548FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{A4F7B2CB-9B36-4D87-ABE3-E9F943FDA67A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4F7B2CB-9B36-4D87-ABE3-E9F943FDA67A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4F7B2CB-9B36-4D87-ABE3-E9F943FDA67A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14F6644-AA38-45B2-BE86-ABA9FC8548FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14F6644-AA38-45B2-BE86-ABA9FC8548FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14F6644-AA38-45B2-BE86-ABA9FC8548FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14F6644-AA38-45B2-BE86-ABA9FC8548FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
