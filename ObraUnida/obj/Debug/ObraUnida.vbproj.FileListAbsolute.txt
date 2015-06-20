@@ -1,2 +1,17 @@
 C:\Users\Luciano\AppData\Local\Temporary Projects\ObraUnida\bin\Debug\ObraUnida.exe.config
 C:\Fontes\SSVP_Projeto\ObraUnida\ObraUnida\bin\Debug\ObraUnida.exe.config
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\bin\Debug\ObraUnida.exe.config
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.vbprojResolveAssemblyReference.cache
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.frmUsuario.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.dlgUnidade.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.frmUnidades.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.dlgConferencia.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.dlgColaborador.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.frmBrowse.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.frmColaboradores.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.frmPrincipal.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.frmReportViewer.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.frmRelUnidades.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.Resources.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.Parametros.resources
+C:\Users\gilberto.martini.DOMINIO\Documents\Visual Studio 2013\Projects\PSS_OBRAUNIDA\ObraUnida\obj\Debug\ObraUnida.vbproj.GenerateResource.Cache
