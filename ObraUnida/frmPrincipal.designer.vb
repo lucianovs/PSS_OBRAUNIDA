@@ -35,6 +35,7 @@ Partial Class frmPrincipal
         Me.Sair = New System.Windows.Forms.ToolStripMenuItem()
         Me.Ajuda = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.menuTipoDeVinculo = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +52,7 @@ Partial Class frmPrincipal
         '
         'menuCadastro
         '
-        Me.menuCadastro.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuTipoObraUnida})
+        Me.menuCadastro.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuTipoObraUnida, Me.menuTipoDeVinculo})
         Me.menuCadastro.Name = "menuCadastro"
         Me.menuCadastro.Size = New System.Drawing.Size(71, 20)
         Me.menuCadastro.Text = "&Cadastros"
@@ -125,6 +126,12 @@ Partial Class frmPrincipal
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'menuTipoDeVinculo
+        '
+        Me.menuTipoDeVinculo.Name = "menuTipoDeVinculo"
+        Me.menuTipoDeVinculo.Size = New System.Drawing.Size(245, 22)
+        Me.menuTipoDeVinculo.Text = "Tipo de Vínculo"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -155,5 +162,6 @@ Partial Class frmPrincipal
     Friend WithEvents Ajuda As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents menuTipoObraUnida As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuTipoDeVinculo As System.Windows.Forms.ToolStripMenuItem
 
 End Class

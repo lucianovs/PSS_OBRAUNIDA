@@ -146,7 +146,14 @@ Public Class frmPrincipal
         frmBrowse_TipoObraUnida.Show()
 
 
+    End Sub
 
+    Private Sub TipoDeVinculoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuTipoDeVinculo.Click
+        Dim frmBrowse_TipoDeVinculo As frmBrowse = New frmBrowse("EUN022", "frmTipoDeVinculo")
 
+        frmBrowse_TipoDeVinculo.MdiParent = Me
+        frmBrowse_TipoDeVinculo.Tag = menuTipoDeVinculo.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_TipoDeVinculo.Text = menuTipoDeVinculo.Text
+        frmBrowse_TipoDeVinculo.Show()
     End Sub
 End Class

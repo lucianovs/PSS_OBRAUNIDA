@@ -104,6 +104,16 @@
     <Compile Include="dlgUnidade.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmTipoDeVinculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmTipoDeVinculo.Designer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmTipoDeOcupacao.Designer.vb" />
+    <Compile Include="Form\frmTipoDeOcupacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\frmTipoObraUnida.designer.vb">
       <DependentUpon>frmTipoObraUnida.vb</DependentUpon>
     </Compile>
@@ -194,6 +204,8 @@
     <EmbeddedResource Include="dlgUnidade.resx">
       <DependentUpon>dlgUnidade.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmTipoDeVinculo.resx" />
+    <EmbeddedResource Include="Form\frmTipoDeOcupacao.resx" />
     <EmbeddedResource Include="Form\frmTipoObraUnida.resx">
       <DependentUpon>frmTipoObraUnida.vb</DependentUpon>
     </EmbeddedResource>
