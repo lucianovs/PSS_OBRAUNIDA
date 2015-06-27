@@ -73,22 +73,8 @@ Public Class frmTipoDeVinculo
         'Preencher Campos
         If i > -1 And Not bIncluir Then
             txtCodigo.Text = dt.Rows(i).Item("UN022_CODVIN")
-            txtDescricao.Text = dt.Rows(i).Item("UN011_DESOCP")
-            'cbNivOcp.Text = IIf(IsDBNull(dt.Rows(i).Item("UN011_NIVOCP")), "CNB", dt.Rows(i).Item("UN011_NIVOCP"))
-            'chkAprAgr.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN011_APRAGR")), False, dt.Rows(i).Item("UN011_APRAGR") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN011_APRAGR")) Then
-                'chkAprAgr.Checked = False
-            Else
-                'chkAprAgr.Checked = dt.Rows(i).Item("UN011_APRAGR") = 1
-            End If
-
-            'chkAprIns.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN011_APRINS")), False, dt.Rows(i).Item("UN011_APRINS") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN011_APRINS")) Then
-                'chkAprIns.Checked = False
-            Else
-                'chkAprIns.Checked = dt.Rows(i).Item("UN011_APRINS") = 1
-            End If
-
+            txtDescricao.Text = dt.Rows(i).Item("UN022_DESVIN")
+                
             'Verificar se é para excluir o registro comandado pelo browse
             If g_Comando = "excluir" Then
                 Call Excluir_Registro()
@@ -142,6 +128,7 @@ Public Class frmTipoDeVinculo
 
         'Inicializar os seus Componentes de Entrada de Dados
         txtCodigo.Text = "auto"
+        txtCodigo.Enabled = False
         txtDescricao.Text = ""
 
         If Not g_Comando = "incluir" Then Call TratarObjetos()
@@ -153,21 +140,41 @@ Public Class frmTipoDeVinculo
         Dim cMensagem As String = ""
         Dim cmd As OleDbCommand
 
+        Dim Situacao As String
+
+        If cbSituacaoCadastro.SelectedItem = "ATIVO" Then
+            Situacao = "A"
+        ElseIf cbSituacaoCadastro.SelectedItem = "INATIVO" Then
+            Situacao = "I"
+        Else
+            Situacao = "E"
+        End If
+
         If ConectarBanco() Then
             '?? Colocar o Comando SQL para Gravar (Update e Insert)
             If bIncluir Then
-                'cSql = "INSERT INTO EUN022(UN022_CODVIN, UN011_DESOCP, UN011_NIVOCP, UN011_APRAGR, UN011_APRINS)"
-                'cSql += " values (" & Integer.Parse(ProxCodChave("EUN022", "UN022_CODVIN")) & ", '" & _
-                ''txtDescricao.Text & "','" & cbNivOcp.Text & "'," & _
-                'IIf(chkAprAgr.Checked, 1, 0).ToString & "," & _
-                'IIf(chkAprIns.Checked, 1, 0).ToString & ")"
+               
+
+                cSql = "INSERT INTO EUN022(" & _
+                    "UN022_CODVIN," & _
+                    "UN022_DESVIN," & _
+                    "UN022_SITCAD," & _
+                    "UN022_DATALT," & _
+                    "UN022_USUALT)"
+                cSql += " values (" &
+                    Integer.Parse(
+                    ProxCodChave("EUN022", "UN022_CODVIN")) & _
+                    ",'" & txtDescricao.Text & "'" & _
+                    ", '" & Situacao & "'" & _
+                    ", '" & dtpDataAlteracao.Text & "'" & _
+                    ", '" & txtLoginUsuarioAlteracao.Text & "')"
 
             ElseIf bAlterar Then
-                'cSql = "UPDATE EUN022 set UN011_DESOCP='" & txtDescricao.Text & "'" & _
-                '' ", UN011_NIVOCP='" & cbNivOcp.Text & "'" & _
-                '", UN011_APRAGR=" & IIf(chkAprAgr.Checked, 1, 0).ToString & _
-                '", UN011_APRINS=" & IIf(chkAprIns.Checked, 1, 0).ToString & _
-                ' " where UN022_CODVIN = " & Integer.Parse(txtCodigo.Text)
+                cSql = "UPDATE EUN022 set UN022_DESVIN='" & txtDescricao.Text & "'" & _
+                ", UN022_SITCAD ='" & Situacao & "'" & _
+                ", UN022_DATALT='" & dtpDataAlteracao.Text & "'" & _
+                ", UN022_USUALT='" & txtLoginUsuarioAlteracao.Text & "'" & _
+                 " WHERE UN022_CODVIN = " & Integer.Parse(txtCodigo.Text)
                 'acessoWEB=" & If(chkSIM.Checked = 0, False, True)
             End If
             cmd = New OleDbCommand(cSql, g_ConnectBanco)
@@ -218,7 +225,7 @@ Public Class frmTipoDeVinculo
         Dim cMensagem As String = ""
         Dim cmd As OleDbCommand
 
-        If MsgBox("Deseja excluir este registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "cadastro de Usuarios") = MsgBoxResult.Yes Then
+        If MsgBox("Deseja excluir este registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Tipo de Vínculo") = MsgBoxResult.Yes Then
             '?? Alterar para a Tabela a ser Excluída ??
             cSql = "DELETE FROM EUN022 where UN022_CODVIN = " & Integer.Parse(txtCodigo.Text)
             cmd = New OleDbCommand(cSql, g_ConnectBanco)

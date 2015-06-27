@@ -42,6 +42,12 @@ Partial Class frmTipoDeVinculo
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tssContReg = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblSituacao = New System.Windows.Forms.Label()
+        Me.cbSituacaoCadastro = New System.Windows.Forms.ComboBox()
+        Me.lblDataAlteracao = New System.Windows.Forms.Label()
+        Me.dtpDataAlteracao = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtLoginUsuarioAlteracao = New System.Windows.Forms.TextBox()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -53,7 +59,7 @@ Partial Class frmTipoDeVinculo
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ToolStrip1.Size = New System.Drawing.Size(436, 39)
+        Me.ToolStrip1.Size = New System.Drawing.Size(454, 39)
         Me.ToolStrip1.Stretch = True
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
@@ -189,15 +195,15 @@ Partial Class frmTipoDeVinculo
         Me.txtDescricao.Location = New System.Drawing.Point(77, 98)
         Me.txtDescricao.MaxLength = 120
         Me.txtDescricao.Name = "txtDescricao"
-        Me.txtDescricao.Size = New System.Drawing.Size(278, 20)
+        Me.txtDescricao.Size = New System.Drawing.Size(296, 20)
         Me.txtDescricao.TabIndex = 3
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssContReg})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 188)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 251)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(436, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(454, 22)
         Me.StatusStrip1.TabIndex = 10
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -207,11 +213,70 @@ Partial Class frmTipoDeVinculo
         Me.tssContReg.Size = New System.Drawing.Size(78, 17)
         Me.tssContReg.Text = "Registro n / n"
         '
+        'lblSituacao
+        '
+        Me.lblSituacao.AutoSize = True
+        Me.lblSituacao.Location = New System.Drawing.Point(13, 134)
+        Me.lblSituacao.Name = "lblSituacao"
+        Me.lblSituacao.Size = New System.Drawing.Size(112, 13)
+        Me.lblSituacao.TabIndex = 11
+        Me.lblSituacao.Text = "Situação do Cadastro:"
+        '
+        'cbSituacaoCadastro
+        '
+        Me.cbSituacaoCadastro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSituacaoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbSituacaoCadastro.FormattingEnabled = True
+        Me.cbSituacaoCadastro.Items.AddRange(New Object() {"ATIVO", "INATIVO", "EXCLUÍDO"})
+        Me.cbSituacaoCadastro.Location = New System.Drawing.Point(131, 134)
+        Me.cbSituacaoCadastro.Name = "cbSituacaoCadastro"
+        Me.cbSituacaoCadastro.Size = New System.Drawing.Size(121, 21)
+        Me.cbSituacaoCadastro.TabIndex = 12
+        '
+        'lblDataAlteracao
+        '
+        Me.lblDataAlteracao.AutoSize = True
+        Me.lblDataAlteracao.Location = New System.Drawing.Point(13, 170)
+        Me.lblDataAlteracao.Name = "lblDataAlteracao"
+        Me.lblDataAlteracao.Size = New System.Drawing.Size(96, 13)
+        Me.lblDataAlteracao.TabIndex = 13
+        Me.lblDataAlteracao.Text = "Data da Alteração:"
+        '
+        'dtpDataAlteracao
+        '
+        Me.dtpDataAlteracao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDataAlteracao.Location = New System.Drawing.Point(116, 170)
+        Me.dtpDataAlteracao.Name = "dtpDataAlteracao"
+        Me.dtpDataAlteracao.Size = New System.Drawing.Size(136, 20)
+        Me.dtpDataAlteracao.TabIndex = 14
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 206)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(153, 13)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Login do Usuário da Alteração:"
+        '
+        'txtLoginUsuarioAlteracao
+        '
+        Me.txtLoginUsuarioAlteracao.Location = New System.Drawing.Point(173, 206)
+        Me.txtLoginUsuarioAlteracao.Name = "txtLoginUsuarioAlteracao"
+        Me.txtLoginUsuarioAlteracao.Size = New System.Drawing.Size(200, 20)
+        Me.txtLoginUsuarioAlteracao.TabIndex = 16
+        '
         'frmTipoDeVinculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(436, 210)
+        Me.ClientSize = New System.Drawing.Size(454, 273)
+        Me.Controls.Add(Me.txtLoginUsuarioAlteracao)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.dtpDataAlteracao)
+        Me.Controls.Add(Me.lblDataAlteracao)
+        Me.Controls.Add(Me.cbSituacaoCadastro)
+        Me.Controls.Add(Me.lblSituacao)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.txtDescricao)
         Me.Controls.Add(Me.txtCodigo)
@@ -220,7 +285,7 @@ Partial Class frmTipoDeVinculo
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmTipoDeVinculo"
-        Me.Text = "frmTipoDeOcupacao"
+        Me.Text = "Tipo de Vínculo"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -248,4 +313,10 @@ Partial Class frmTipoDeVinculo
     Friend WithEvents txtDescricao As System.Windows.Forms.TextBox
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents tssContReg As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents lblSituacao As System.Windows.Forms.Label
+    Friend WithEvents cbSituacaoCadastro As System.Windows.Forms.ComboBox
+    Friend WithEvents lblDataAlteracao As System.Windows.Forms.Label
+    Friend WithEvents dtpDataAlteracao As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txtLoginUsuarioAlteracao As System.Windows.Forms.TextBox
 End Class

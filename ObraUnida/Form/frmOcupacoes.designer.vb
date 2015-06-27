@@ -42,10 +42,10 @@ Partial Class frmOcupacoes
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tssContReg = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblNivOcp = New System.Windows.Forms.Label()
-        Me.cbNivOcp = New System.Windows.Forms.ComboBox()
-        Me.chkAprAgr = New System.Windows.Forms.CheckBox()
-        Me.chkAprIns = New System.Windows.Forms.CheckBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.lblDataAlteracao = New System.Windows.Forms.Label()
+        Me.cbSituacaoCadastro = New System.Windows.Forms.ComboBox()
+        Me.lblSituacao = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -57,7 +57,7 @@ Partial Class frmOcupacoes
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ToolStrip1.Size = New System.Drawing.Size(582, 39)
+        Me.ToolStrip1.Size = New System.Drawing.Size(449, 39)
         Me.ToolStrip1.Stretch = True
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
@@ -161,10 +161,9 @@ Partial Class frmOcupacoes
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(17, 75)
-        Me.lblCodigo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCodigo.Location = New System.Drawing.Point(13, 61)
         Me.lblCodigo.Name = "lblCodigo"
-        Me.lblCodigo.Size = New System.Drawing.Size(56, 17)
+        Me.lblCodigo.Size = New System.Drawing.Size(43, 13)
         Me.lblCodigo.TabIndex = 1
         Me.lblCodigo.Text = "Código:"
         '
@@ -172,100 +171,92 @@ Partial Class frmOcupacoes
         '
         Me.lblDescricao.AutoSize = True
         Me.lblDescricao.ForeColor = System.Drawing.Color.Red
-        Me.lblDescricao.Location = New System.Drawing.Point(17, 121)
-        Me.lblDescricao.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDescricao.Location = New System.Drawing.Point(13, 98)
         Me.lblDescricao.Name = "lblDescricao"
-        Me.lblDescricao.Size = New System.Drawing.Size(75, 17)
+        Me.lblDescricao.Size = New System.Drawing.Size(58, 13)
         Me.lblDescricao.TabIndex = 3
         Me.lblDescricao.Text = "Descrição:"
         '
         'txtCodigo
         '
         Me.txtCodigo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtCodigo.Location = New System.Drawing.Point(83, 74)
-        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCodigo.Location = New System.Drawing.Point(62, 60)
         Me.txtCodigo.MaxLength = 8
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(83, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(63, 20)
         Me.txtCodigo.TabIndex = 1
         '
         'txtDescricao
         '
         Me.txtDescricao.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtDescricao.Location = New System.Drawing.Point(103, 121)
-        Me.txtDescricao.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDescricao.Location = New System.Drawing.Point(77, 98)
         Me.txtDescricao.MaxLength = 120
         Me.txtDescricao.Name = "txtDescricao"
-        Me.txtDescricao.Size = New System.Drawing.Size(369, 22)
+        Me.txtDescricao.Size = New System.Drawing.Size(291, 20)
         Me.txtDescricao.TabIndex = 3
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssContReg})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 233)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 256)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(582, 25)
+        Me.StatusStrip1.Size = New System.Drawing.Size(449, 22)
         Me.StatusStrip1.TabIndex = 10
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'tssContReg
         '
         Me.tssContReg.Name = "tssContReg"
-        Me.tssContReg.Size = New System.Drawing.Size(98, 20)
+        Me.tssContReg.Size = New System.Drawing.Size(78, 17)
         Me.tssContReg.Text = "Registro n / n"
         '
-        'lblNivOcp
+        'DateTimePicker1
         '
-        Me.lblNivOcp.AutoSize = True
-        Me.lblNivOcp.ForeColor = System.Drawing.Color.Red
-        Me.lblNivOcp.Location = New System.Drawing.Point(201, 74)
-        Me.lblNivOcp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblNivOcp.Name = "lblNivOcp"
-        Me.lblNivOcp.Size = New System.Drawing.Size(120, 17)
-        Me.lblNivOcp.TabIndex = 2
-        Me.lblNivOcp.Text = "Nível do Encargo:"
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(116, 173)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(136, 20)
+        Me.DateTimePicker1.TabIndex = 24
         '
-        'cbNivOcp
+        'lblDataAlteracao
         '
-        Me.cbNivOcp.FormattingEnabled = True
-        Me.cbNivOcp.Items.AddRange(New Object() {"CNB", "CM", "CC", "CP", "CF"})
-        Me.cbNivOcp.Location = New System.Drawing.Point(323, 70)
-        Me.cbNivOcp.Name = "cbNivOcp"
-        Me.cbNivOcp.Size = New System.Drawing.Size(79, 24)
-        Me.cbNivOcp.TabIndex = 2
+        Me.lblDataAlteracao.AutoSize = True
+        Me.lblDataAlteracao.Location = New System.Drawing.Point(13, 173)
+        Me.lblDataAlteracao.Name = "lblDataAlteracao"
+        Me.lblDataAlteracao.Size = New System.Drawing.Size(96, 13)
+        Me.lblDataAlteracao.TabIndex = 23
+        Me.lblDataAlteracao.Text = "Data da Alteração:"
         '
-        'chkAprAgr
+        'cbSituacaoCadastro
         '
-        Me.chkAprAgr.AutoSize = True
-        Me.chkAprAgr.Location = New System.Drawing.Point(20, 170)
-        Me.chkAprAgr.Name = "chkAprAgr"
-        Me.chkAprAgr.Size = New System.Drawing.Size(274, 21)
-        Me.chkAprAgr.TabIndex = 11
-        Me.chkAprAgr.Text = "Permissão para aprovar AGREGAÇÃO"
-        Me.chkAprAgr.UseVisualStyleBackColor = True
+        Me.cbSituacaoCadastro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSituacaoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbSituacaoCadastro.FormattingEnabled = True
+        Me.cbSituacaoCadastro.Items.AddRange(New Object() {"ATIVO", "INATIVO", "EXCLUÍDO"})
+        Me.cbSituacaoCadastro.Location = New System.Drawing.Point(131, 137)
+        Me.cbSituacaoCadastro.Name = "cbSituacaoCadastro"
+        Me.cbSituacaoCadastro.Size = New System.Drawing.Size(121, 21)
+        Me.cbSituacaoCadastro.TabIndex = 22
         '
-        'chkAprIns
+        'lblSituacao
         '
-        Me.chkAprIns.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.chkAprIns.AutoSize = True
-        Me.chkAprIns.Location = New System.Drawing.Point(308, 170)
-        Me.chkAprIns.Name = "chkAprIns"
-        Me.chkAprIns.Size = New System.Drawing.Size(271, 21)
-        Me.chkAprIns.TabIndex = 12
-        Me.chkAprIns.Text = "Permissão para aprovar INSTITUIÇÃO"
-        Me.chkAprIns.UseVisualStyleBackColor = True
+        Me.lblSituacao.AutoSize = True
+        Me.lblSituacao.Location = New System.Drawing.Point(13, 137)
+        Me.lblSituacao.Name = "lblSituacao"
+        Me.lblSituacao.Size = New System.Drawing.Size(112, 13)
+        Me.lblSituacao.TabIndex = 21
+        Me.lblSituacao.Text = "Situação do Cadastro:"
         '
-        'frmTipoDeOcupacao
+        'frmOcupacoes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(582, 258)
-        Me.Controls.Add(Me.chkAprIns)
-        Me.Controls.Add(Me.chkAprAgr)
-        Me.Controls.Add(Me.cbNivOcp)
-        Me.Controls.Add(Me.lblNivOcp)
+        Me.ClientSize = New System.Drawing.Size(449, 278)
+        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.lblDataAlteracao)
+        Me.Controls.Add(Me.cbSituacaoCadastro)
+        Me.Controls.Add(Me.lblSituacao)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.txtDescricao)
         Me.Controls.Add(Me.txtCodigo)
@@ -273,9 +264,8 @@ Partial Class frmOcupacoes
         Me.Controls.Add(Me.lblCodigo)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.Name = "frmTipoDeOcupacao"
-        Me.Text = "frmTipoDeOcupacao"
+        Me.Name = "frmOcupacoes"
+        Me.Text = "Ocupação"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -303,8 +293,8 @@ Partial Class frmOcupacoes
     Friend WithEvents txtDescricao As System.Windows.Forms.TextBox
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents tssContReg As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents lblNivOcp As System.Windows.Forms.Label
-    Friend WithEvents cbNivOcp As System.Windows.Forms.ComboBox
-    Friend WithEvents chkAprAgr As System.Windows.Forms.CheckBox
-    Friend WithEvents chkAprIns As System.Windows.Forms.CheckBox
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents lblDataAlteracao As System.Windows.Forms.Label
+    Friend WithEvents cbSituacaoCadastro As System.Windows.Forms.ComboBox
+    Friend WithEvents lblSituacao As System.Windows.Forms.Label
 End Class

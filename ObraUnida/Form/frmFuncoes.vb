@@ -65,31 +65,31 @@ Public Class frmFuncoes
         '?? Alterar para os seus objetos da Tela ??
         lblCodigo.Enabled = False
         lblDescricao.Enabled = bAlterar
-        lblNivOcp.Enabled = bAlterar
+        'lblNivOcp.Enabled = bAlterar
         'lblNmUsuario.Enabled = bAlterar And Me.Tag = 4 'And Me.Tag > 1
         txtCodigo.Enabled = False
         txtDescricao.Enabled = bAlterar
-        cbNivOcp.Enabled = bAlterar
-        chkAprAgr.Enabled = bAlterar
-        chkAprIns.Enabled = bAlterar
+        'cbNivOcp.Enabled = bAlterar
+        'chkAprAgr.Enabled = bAlterar
+        'chkAprIns.Enabled = bAlterar
 
         'Preencher Campos
         If i > -1 And Not bIncluir Then
             txtCodigo.Text = dt.Rows(i).Item("UN017_CODOCP")
             txtDescricao.Text = dt.Rows(i).Item("UN017_DESOCP")
-            cbNivOcp.Text = IIf(IsDBNull(dt.Rows(i).Item("UN017_NIVOCP")), "CNB", dt.Rows(i).Item("UN017_NIVOCP"))
+            'cbNivOcp.Text = IIf(IsDBNull(dt.Rows(i).Item("UN017_NIVOCP")), "CNB", dt.Rows(i).Item("UN017_NIVOCP"))
             'chkAprAgr.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN017_APRAGR")), False, dt.Rows(i).Item("UN017_APRAGR") = 1)
             If IsDBNull(dt.Rows(i).Item("UN017_APRAGR")) Then
-                chkAprAgr.Checked = False
+                '   chkAprAgr.Checked = False
             Else
-                chkAprAgr.Checked = dt.Rows(i).Item("UN017_APRAGR") = 1
+                '    chkAprAgr.Checked = dt.Rows(i).Item("UN017_APRAGR") = 1
             End If
 
             'chkAprIns.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN017_APRINS")), False, dt.Rows(i).Item("UN017_APRINS") = 1)
             If IsDBNull(dt.Rows(i).Item("UN017_APRINS")) Then
-                chkAprIns.Checked = False
+                ' chkAprIns.Checked = False
             Else
-                chkAprIns.Checked = dt.Rows(i).Item("UN017_APRINS") = 1
+                ' chkAprIns.Checked = dt.Rows(i).Item("UN017_APRINS") = 1
             End If
 
             'Verificar se é para excluir o registro comandado pelo browse
@@ -159,18 +159,18 @@ Public Class frmFuncoes
         If ConectarBanco() Then
             '?? Colocar o Comando SQL para Gravar (Update e Insert)
             If bIncluir Then
-                cSql = "INSERT INTO EUN017(UN017_CODOCP, UN017_DESOCP, UN017_NIVOCP, UN017_APRAGR, UN017_APRINS)"
-                cSql += " values (" & Integer.Parse(ProxCodChave("EUN017", "UN017_CODOCP")) & ", '" & _
-                    txtDescricao.Text & "','" & cbNivOcp.Text & "'," & _
-                    IIf(chkAprAgr.Checked, 1, 0).ToString & "," & _
-                    IIf(chkAprIns.Checked, 1, 0).ToString & ")"
+                ' cSql = "INSERT INTO EUN017(UN017_CODOCP, UN017_DESOCP, UN017_NIVOCP, UN017_APRAGR, UN017_APRINS)"
+                '    cSql += " values (" & Integer.Parse(ProxCodChave("EUN017", "UN017_CODOCP")) & ", '" & _
+                'txtDescricao.Text & "','" & cbNivOcp.Text & "'," & _
+                'IIf(chkAprAgr.Checked, 1, 0).ToString & "," & _
+                'IIf(chkAprIns.Checked, 1, 0).ToString & ")"
 
             ElseIf bAlterar Then
-                cSql = "UPDATE EUN017 set UN017_DESOCP='" & txtDescricao.Text & "'" & _
-                    ", UN017_NIVOCP='" & cbNivOcp.Text & "'" & _
-                    ", UN017_APRAGR=" & IIf(chkAprAgr.Checked, 1, 0).ToString & _
-                    ", UN017_APRINS=" & IIf(chkAprIns.Checked, 1, 0).ToString & _
-                    " where UN017_CODOCP = " & Integer.Parse(txtCodigo.Text)
+                ' cSql = "UPDATE EUN017 set UN017_DESOCP='" & txtDescricao.Text & "'" & _
+                '     ", UN017_NIVOCP='" & cbNivOcp.Text & "'" & _
+                '     ", UN017_APRAGR=" & IIf(chkAprAgr.Checked, 1, 0).ToString & _
+                '     ", UN017_APRINS=" & IIf(chkAprIns.Checked, 1, 0).ToString & _
+                '   " where UN017_CODOCP = " & Integer.Parse(txtCodigo.Text)
                 'acessoWEB=" & If(chkSIM.Checked = 0, False, True)
             End If
             cmd = New OleDbCommand(cSql, g_ConnectBanco)

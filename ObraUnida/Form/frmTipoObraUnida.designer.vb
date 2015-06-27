@@ -24,20 +24,20 @@ Partial Class frmTipoObraUnida
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTipoObraUnida))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.tssContReg = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnIncluir = New System.Windows.Forms.ToolStripButton()
         Me.btnAlterar = New System.Windows.Forms.ToolStripButton()
         Me.btnExcluir = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnGravar = New System.Windows.Forms.ToolStripButton()
         Me.btnCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnAnterior = New System.Windows.Forms.ToolStripButton()
         Me.btnProximo = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnLocalizar = New System.Windows.Forms.ToolStripButton()
         Me.btnImprimir = New System.Windows.Forms.ToolStripButton()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.tssContReg = New System.Windows.Forms.ToolStripStatusLabel()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.lblDescricao = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
@@ -57,36 +57,6 @@ Partial Class frmTipoObraUnida
         Me.ToolStrip1.Stretch = True
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 39)
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 39)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 39)
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssContReg})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 181)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(421, 22)
-        Me.StatusStrip1.TabIndex = 11
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'tssContReg
-        '
-        Me.tssContReg.Name = "tssContReg"
-        Me.tssContReg.Size = New System.Drawing.Size(78, 17)
-        Me.tssContReg.Text = "Registro n / n"
         '
         'btnIncluir
         '
@@ -115,6 +85,11 @@ Partial Class frmTipoObraUnida
         Me.btnExcluir.Size = New System.Drawing.Size(36, 36)
         Me.btnExcluir.Text = "Excluir"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 39)
+        '
         'btnGravar
         '
         Me.btnGravar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -132,6 +107,11 @@ Partial Class frmTipoObraUnida
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(36, 36)
         Me.btnCancelar.Text = "Cancelar"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 39)
         '
         'btnAnterior
         '
@@ -151,6 +131,11 @@ Partial Class frmTipoObraUnida
         Me.btnProximo.Size = New System.Drawing.Size(36, 36)
         Me.btnProximo.Text = "Próximo"
         '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 39)
+        '
         'btnLocalizar
         '
         Me.btnLocalizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -168,6 +153,21 @@ Partial Class frmTipoObraUnida
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(36, 36)
         Me.btnImprimir.Text = "Imprimir"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssContReg})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 181)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(421, 22)
+        Me.StatusStrip1.TabIndex = 11
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'tssContReg
+        '
+        Me.tssContReg.Name = "tssContReg"
+        Me.tssContReg.Size = New System.Drawing.Size(78, 17)
+        Me.tssContReg.Text = "Registro n / n"
         '
         'txtDescricao
         '
@@ -218,7 +218,7 @@ Partial Class frmTipoObraUnida
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmTipoObraUnida"
-        Me.Text = "Tipos Obra Unida"
+        Me.Text = "Tipo de Vínculo"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
