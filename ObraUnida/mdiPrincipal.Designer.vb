@@ -26,9 +26,26 @@ Partial Class mdiPrincipal
         Me.MenuPrincipal = New System.Windows.Forms.MenuStrip()
         Me.menuCadastro = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuTipoObraUnida = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuTipoDeVinculo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuFuncoes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuOcupacoes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.menuContasDoOrcamento = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuUnidades = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuColaboradores = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuProcessos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuFichaDeObrasUnidasOuEspeciais = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuEmpregados = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuBeneficiarios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuMandatos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuBalancoOrcamentario = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuConsultas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuConsultaDosDadosDasObras = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuRelatorios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuRelatorioDasObrasUnidasPorConselho = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuEmpregadosPorObra = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuMandatosPorObra = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BalancoOrcamentario = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuSistema = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuConfiguracoes = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
@@ -36,6 +53,7 @@ Partial Class mdiPrincipal
         Me.Sair = New System.Windows.Forms.ToolStripMenuItem()
         Me.Ajuda = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.menuFichaCadastral = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,7 +70,7 @@ Partial Class mdiPrincipal
         '
         'menuCadastro
         '
-        Me.menuCadastro.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuTipoObraUnida})
+        Me.menuCadastro.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuTipoObraUnida, Me.menuTipoDeVinculo, Me.menuFuncoes, Me.menuOcupacoes, Me.ToolStripSeparator1, Me.menuContasDoOrcamento, Me.menuUnidades, Me.menuColaboradores})
         Me.menuCadastro.Name = "menuCadastro"
         Me.menuCadastro.Size = New System.Drawing.Size(71, 20)
         Me.menuCadastro.Text = "&Cadastros"
@@ -63,23 +81,127 @@ Partial Class mdiPrincipal
         Me.menuTipoObraUnida.Size = New System.Drawing.Size(245, 22)
         Me.menuTipoObraUnida.Text = "Tipo de Obras Unidas / Especiais"
         '
+        'menuTipoDeVinculo
+        '
+        Me.menuTipoDeVinculo.Name = "menuTipoDeVinculo"
+        Me.menuTipoDeVinculo.Size = New System.Drawing.Size(245, 22)
+        Me.menuTipoDeVinculo.Text = "Tipo de Vínculo"
+        '
+        'menuFuncoes
+        '
+        Me.menuFuncoes.Name = "menuFuncoes"
+        Me.menuFuncoes.Size = New System.Drawing.Size(245, 22)
+        Me.menuFuncoes.Text = "Funções"
+        '
+        'menuOcupacoes
+        '
+        Me.menuOcupacoes.Name = "menuOcupacoes"
+        Me.menuOcupacoes.Size = New System.Drawing.Size(245, 22)
+        Me.menuOcupacoes.Text = "Ocupações"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(242, 6)
+        '
+        'menuContasDoOrcamento
+        '
+        Me.menuContasDoOrcamento.Name = "menuContasDoOrcamento"
+        Me.menuContasDoOrcamento.Size = New System.Drawing.Size(245, 22)
+        Me.menuContasDoOrcamento.Text = "Contas do Orçamento"
+        '
+        'menuUnidades
+        '
+        Me.menuUnidades.Name = "menuUnidades"
+        Me.menuUnidades.Size = New System.Drawing.Size(245, 22)
+        Me.menuUnidades.Text = "Unidades"
+        '
+        'menuColaboradores
+        '
+        Me.menuColaboradores.Name = "menuColaboradores"
+        Me.menuColaboradores.Size = New System.Drawing.Size(245, 22)
+        Me.menuColaboradores.Text = "Colaboradores"
+        '
         'menuProcessos
         '
+        Me.menuProcessos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuFichaDeObrasUnidasOuEspeciais, Me.menuEmpregados, Me.menuBeneficiarios, Me.menuMandatos, Me.menuBalancoOrcamentario})
         Me.menuProcessos.Name = "menuProcessos"
         Me.menuProcessos.Size = New System.Drawing.Size(71, 20)
         Me.menuProcessos.Text = "Processos"
         '
+        'menuFichaDeObrasUnidasOuEspeciais
+        '
+        Me.menuFichaDeObrasUnidasOuEspeciais.Name = "menuFichaDeObrasUnidasOuEspeciais"
+        Me.menuFichaDeObrasUnidasOuEspeciais.Size = New System.Drawing.Size(261, 22)
+        Me.menuFichaDeObrasUnidasOuEspeciais.Text = "Ficha de Obras Unidas ou Especiais "
+        '
+        'menuEmpregados
+        '
+        Me.menuEmpregados.Name = "menuEmpregados"
+        Me.menuEmpregados.Size = New System.Drawing.Size(261, 22)
+        Me.menuEmpregados.Text = "Empregados"
+        '
+        'menuBeneficiarios
+        '
+        Me.menuBeneficiarios.Name = "menuBeneficiarios"
+        Me.menuBeneficiarios.Size = New System.Drawing.Size(261, 22)
+        Me.menuBeneficiarios.Text = "Beneficiários"
+        '
+        'menuMandatos
+        '
+        Me.menuMandatos.Name = "menuMandatos"
+        Me.menuMandatos.Size = New System.Drawing.Size(261, 22)
+        Me.menuMandatos.Text = "Mandatos"
+        '
+        'menuBalancoOrcamentario
+        '
+        Me.menuBalancoOrcamentario.Name = "menuBalancoOrcamentario"
+        Me.menuBalancoOrcamentario.Size = New System.Drawing.Size(261, 22)
+        Me.menuBalancoOrcamentario.Text = "Balanço Orçamentário"
+        '
         'menuConsultas
         '
+        Me.menuConsultas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuConsultaDosDadosDasObras})
         Me.menuConsultas.Name = "menuConsultas"
         Me.menuConsultas.Size = New System.Drawing.Size(71, 20)
         Me.menuConsultas.Text = "Consultas"
         '
+        'menuConsultaDosDadosDasObras
+        '
+        Me.menuConsultaDosDadosDasObras.Name = "menuConsultaDosDadosDasObras"
+        Me.menuConsultaDosDadosDasObras.Size = New System.Drawing.Size(237, 22)
+        Me.menuConsultaDosDadosDasObras.Text = "Consulta dos Dados das Obras "
+        '
         'menuRelatorios
         '
+        Me.menuRelatorios.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuRelatorioDasObrasUnidasPorConselho, Me.menuEmpregadosPorObra, Me.menuMandatosPorObra, Me.BalancoOrcamentario, Me.menuFichaCadastral})
         Me.menuRelatorios.Name = "menuRelatorios"
         Me.menuRelatorios.Size = New System.Drawing.Size(71, 20)
         Me.menuRelatorios.Text = "&Relatórios"
+        '
+        'menuRelatorioDasObrasUnidasPorConselho
+        '
+        Me.menuRelatorioDasObrasUnidasPorConselho.Name = "menuRelatorioDasObrasUnidasPorConselho"
+        Me.menuRelatorioDasObrasUnidasPorConselho.Size = New System.Drawing.Size(289, 22)
+        Me.menuRelatorioDasObrasUnidasPorConselho.Text = "Relatório das Obras Unidas Por Conselho"
+        '
+        'menuEmpregadosPorObra
+        '
+        Me.menuEmpregadosPorObra.Name = "menuEmpregadosPorObra"
+        Me.menuEmpregadosPorObra.Size = New System.Drawing.Size(289, 22)
+        Me.menuEmpregadosPorObra.Text = "Empregados por Obra"
+        '
+        'menuMandatosPorObra
+        '
+        Me.menuMandatosPorObra.Name = "menuMandatosPorObra"
+        Me.menuMandatosPorObra.Size = New System.Drawing.Size(289, 22)
+        Me.menuMandatosPorObra.Text = "Mandatos por Obra"
+        '
+        'BalancoOrcamentario
+        '
+        Me.BalancoOrcamentario.Name = "BalancoOrcamentario"
+        Me.BalancoOrcamentario.Size = New System.Drawing.Size(289, 22)
+        Me.BalancoOrcamentario.Text = "Balanço Orçamentário"
         '
         'menuSistema
         '
@@ -91,24 +213,24 @@ Partial Class mdiPrincipal
         'menuConfiguracoes
         '
         Me.menuConfiguracoes.Name = "menuConfiguracoes"
-        Me.menuConfiguracoes.Size = New System.Drawing.Size(151, 22)
+        Me.menuConfiguracoes.Size = New System.Drawing.Size(152, 22)
         Me.menuConfiguracoes.Text = "Configurações"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(148, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
         '
         'menuUsuarios
         '
         Me.menuUsuarios.Name = "menuUsuarios"
-        Me.menuUsuarios.Size = New System.Drawing.Size(151, 22)
+        Me.menuUsuarios.Size = New System.Drawing.Size(152, 22)
         Me.menuUsuarios.Text = "Usuários"
         '
         'Sair
         '
         Me.Sair.Name = "Sair"
-        Me.Sair.Size = New System.Drawing.Size(151, 22)
+        Me.Sair.Size = New System.Drawing.Size(152, 22)
         Me.Sair.Text = "Sair"
         '
         'Ajuda
@@ -126,6 +248,12 @@ Partial Class mdiPrincipal
         Me.StatusStrip1.TabIndex = 10
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'menuFichaCadastral
+        '
+        Me.menuFichaCadastral.Name = "menuFichaCadastral"
+        Me.menuFichaCadastral.Size = New System.Drawing.Size(289, 22)
+        Me.menuFichaCadastral.Text = "Ficha Cadastral"
+        '
         'mdiPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -135,7 +263,7 @@ Partial Class mdiPrincipal
         Me.Controls.Add(Me.MenuPrincipal)
         Me.IsMdiContainer = True
         Me.Name = "mdiPrincipal"
-        Me.Text = "mdiPrincipal"
+        Me.Text = "Módulo Obras Unidas"
         Me.MenuPrincipal.ResumeLayout(False)
         Me.MenuPrincipal.PerformLayout()
         Me.ResumeLayout(False)
@@ -155,5 +283,23 @@ Partial Class mdiPrincipal
     Friend WithEvents Sair As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Ajuda As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents menuTipoDeVinculo As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuFuncoes As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuOcupacoes As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents menuContasDoOrcamento As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuUnidades As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuColaboradores As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuFichaDeObrasUnidasOuEspeciais As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuEmpregados As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuBeneficiarios As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuMandatos As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuBalancoOrcamentario As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuConsultaDosDadosDasObras As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuRelatorioDasObrasUnidasPorConselho As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuEmpregadosPorObra As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuMandatosPorObra As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BalancoOrcamentario As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuFichaCadastral As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -149,4 +149,62 @@ Public Class mdiPrincipal
 
 
     End Sub
+
+    Private Sub menuTipoDeVinculo_Click(sender As Object, e As EventArgs) Handles menuTipoDeVinculo.Click
+        Dim frmBrowse_TipoDeVinculo As frmBrowse = New frmBrowse("EUN022", "frmTipoDeVinculo")
+
+        frmBrowse_TipoDeVinculo.MdiParent = Me
+        frmBrowse_TipoDeVinculo.Tag = menuTipoDeVinculo.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_TipoDeVinculo.Text = menuTipoDeVinculo.Text
+        frmBrowse_TipoDeVinculo.Show()
+
+
+    End Sub
+
+    Private Sub menuFuncoes_Click(sender As Object, e As EventArgs) Handles menuFuncoes.Click
+
+        Dim frmBrowse_Funcoes As frmBrowse = New frmBrowse("EUN017", "frmFuncoes")
+
+        frmBrowse_Funcoes.MdiParent = Me
+        frmBrowse_Funcoes.Tag = menuFuncoes.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_Funcoes.Text = menuFuncoes.Text
+        frmBrowse_Funcoes.Show()
+
+    End Sub
+
+    Private Sub menuOcupacoes_Click(sender As Object, e As EventArgs) Handles menuOcupacoes.Click
+        Dim frmBrowse_Ocupacoes As frmBrowse = New frmBrowse("EUN020", "frmOcupacoes")
+
+        frmBrowse_Ocupacoes.MdiParent = Me
+        frmBrowse_Ocupacoes.Tag = menuOcupacoes.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_Ocupacoes.Text = menuOcupacoes.Text
+        frmBrowse_Ocupacoes.Show()
+    End Sub
+    Private Sub menuContasDoOrcamento_Click(sender As Object, e As EventArgs) Handles menuContasDoOrcamento.Click
+        Dim frmBrowse_ContasDoOrcamento As frmBrowse = New frmBrowse("EUN023", "frmContasDoOrcamento")
+
+        frmBrowse_ContasDoOrcamento.MdiParent = Me
+        frmBrowse_ContasDoOrcamento.Tag = menuContasDoOrcamento.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_ContasDoOrcamento.Text = menuContasDoOrcamento.Text
+        frmBrowse_ContasDoOrcamento.Show()
+    End Sub
+    Private Sub menuUnidades_Click(sender As Object, e As EventArgs) Handles menuUnidades.Click
+        Dim frmBrowse_Unidades As frmBrowse = New frmBrowse("EUN000", "frmUnidades")
+
+        frmBrowse_Unidades.MdiParent = Me
+        frmBrowse_Unidades.Tag = menuUnidades.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_Unidades.Text = menuUnidades.Text
+        frmBrowse_Unidades.Show()
+    End Sub
+   
+    Private Sub menuColaboradores_Click(sender As Object, e As EventArgs) Handles menuColaboradores.Click
+        Dim frmBrowse_Colaboradores As frmBrowse = New frmBrowse("EUN003", "frmColaboradores")
+
+        frmBrowse_Colaboradores.MdiParent = Me
+        frmBrowse_Colaboradores.Tag = menuColaboradores.Tag 'é gravado no tag do menu o nível de acesso
+        frmBrowse_Colaboradores.Text = menuColaboradores.Text
+        frmBrowse_Colaboradores.Show()
+    End Sub
+
+      
 End Class

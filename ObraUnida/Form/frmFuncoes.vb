@@ -1,24 +1,24 @@
 ﻿Imports System.Data.OleDb
 Imports System.Drawing.Printing
 
-Public Class frmTipoDeVinculo
+Public Class frmFuncoes
     '?? Alterar para a Entidade Principal ??
-    Dim dt As DataTable = New DataTable("EUN022")
+    Dim dt As DataTable = New DataTable("EUN017")
 
     Dim i As Integer
     Dim bAlterar As Boolean = False
     Dim bIncluir As Boolean = False
     Dim cQuery As String
 
-    Private Sub frmTipoDeVinculo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub frmFuncoes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         g_Param(1) = txtCodigo.Text 'Voltar com a Chave do registro do formulário
         g_AtuBrowse = True
     End Sub
 
-    Private Sub frmTipoDeVinculo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmFuncoes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Criar um adaptador que vai fazer o download de dados da base de dados
         '?? Alterar o Código para a Entidade Principal ??
-        cQuery = "SELECT * FROM EUN022 where UN022_CODVIN = "
+        cQuery = "SELECT * FROM EUN017 where UN017_CODOCP = "
         If g_Comando = "incluir" Then
             cQuery += "0"
         Else
@@ -65,28 +65,31 @@ Public Class frmTipoDeVinculo
         '?? Alterar para os seus objetos da Tela ??
         lblCodigo.Enabled = False
         lblDescricao.Enabled = bAlterar
-
+        lblNivOcp.Enabled = bAlterar
         'lblNmUsuario.Enabled = bAlterar And Me.Tag = 4 'And Me.Tag > 1
         txtCodigo.Enabled = False
         txtDescricao.Enabled = bAlterar
+        cbNivOcp.Enabled = bAlterar
+        chkAprAgr.Enabled = bAlterar
+        chkAprIns.Enabled = bAlterar
 
         'Preencher Campos
         If i > -1 And Not bIncluir Then
-            txtCodigo.Text = dt.Rows(i).Item("UN022_CODVIN")
-            txtDescricao.Text = dt.Rows(i).Item("UN011_DESOCP")
-            'cbNivOcp.Text = IIf(IsDBNull(dt.Rows(i).Item("UN011_NIVOCP")), "CNB", dt.Rows(i).Item("UN011_NIVOCP"))
-            'chkAprAgr.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN011_APRAGR")), False, dt.Rows(i).Item("UN011_APRAGR") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN011_APRAGR")) Then
-                'chkAprAgr.Checked = False
+            txtCodigo.Text = dt.Rows(i).Item("UN017_CODOCP")
+            txtDescricao.Text = dt.Rows(i).Item("UN017_DESOCP")
+            cbNivOcp.Text = IIf(IsDBNull(dt.Rows(i).Item("UN017_NIVOCP")), "CNB", dt.Rows(i).Item("UN017_NIVOCP"))
+            'chkAprAgr.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN017_APRAGR")), False, dt.Rows(i).Item("UN017_APRAGR") = 1)
+            If IsDBNull(dt.Rows(i).Item("UN017_APRAGR")) Then
+                chkAprAgr.Checked = False
             Else
-                'chkAprAgr.Checked = dt.Rows(i).Item("UN011_APRAGR") = 1
+                chkAprAgr.Checked = dt.Rows(i).Item("UN017_APRAGR") = 1
             End If
 
-            'chkAprIns.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN011_APRINS")), False, dt.Rows(i).Item("UN011_APRINS") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN011_APRINS")) Then
-                'chkAprIns.Checked = False
+            'chkAprIns.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN017_APRINS")), False, dt.Rows(i).Item("UN017_APRINS") = 1)
+            If IsDBNull(dt.Rows(i).Item("UN017_APRINS")) Then
+                chkAprIns.Checked = False
             Else
-                'chkAprIns.Checked = dt.Rows(i).Item("UN011_APRINS") = 1
+                chkAprIns.Checked = dt.Rows(i).Item("UN017_APRINS") = 1
             End If
 
             'Verificar se é para excluir o registro comandado pelo browse
@@ -156,18 +159,18 @@ Public Class frmTipoDeVinculo
         If ConectarBanco() Then
             '?? Colocar o Comando SQL para Gravar (Update e Insert)
             If bIncluir Then
-                'cSql = "INSERT INTO EUN022(UN022_CODVIN, UN011_DESOCP, UN011_NIVOCP, UN011_APRAGR, UN011_APRINS)"
-                'cSql += " values (" & Integer.Parse(ProxCodChave("EUN022", "UN022_CODVIN")) & ", '" & _
-                ''txtDescricao.Text & "','" & cbNivOcp.Text & "'," & _
-                'IIf(chkAprAgr.Checked, 1, 0).ToString & "," & _
-                'IIf(chkAprIns.Checked, 1, 0).ToString & ")"
+                cSql = "INSERT INTO EUN017(UN017_CODOCP, UN017_DESOCP, UN017_NIVOCP, UN017_APRAGR, UN017_APRINS)"
+                cSql += " values (" & Integer.Parse(ProxCodChave("EUN017", "UN017_CODOCP")) & ", '" & _
+                    txtDescricao.Text & "','" & cbNivOcp.Text & "'," & _
+                    IIf(chkAprAgr.Checked, 1, 0).ToString & "," & _
+                    IIf(chkAprIns.Checked, 1, 0).ToString & ")"
 
             ElseIf bAlterar Then
-                'cSql = "UPDATE EUN022 set UN011_DESOCP='" & txtDescricao.Text & "'" & _
-                '' ", UN011_NIVOCP='" & cbNivOcp.Text & "'" & _
-                '", UN011_APRAGR=" & IIf(chkAprAgr.Checked, 1, 0).ToString & _
-                '", UN011_APRINS=" & IIf(chkAprIns.Checked, 1, 0).ToString & _
-                ' " where UN022_CODVIN = " & Integer.Parse(txtCodigo.Text)
+                cSql = "UPDATE EUN017 set UN017_DESOCP='" & txtDescricao.Text & "'" & _
+                    ", UN017_NIVOCP='" & cbNivOcp.Text & "'" & _
+                    ", UN017_APRAGR=" & IIf(chkAprAgr.Checked, 1, 0).ToString & _
+                    ", UN017_APRINS=" & IIf(chkAprIns.Checked, 1, 0).ToString & _
+                    " where UN017_CODOCP = " & Integer.Parse(txtCodigo.Text)
                 'acessoWEB=" & If(chkSIM.Checked = 0, False, True)
             End If
             cmd = New OleDbCommand(cSql, g_ConnectBanco)
@@ -220,7 +223,7 @@ Public Class frmTipoDeVinculo
 
         If MsgBox("Deseja excluir este registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "cadastro de Usuarios") = MsgBoxResult.Yes Then
             '?? Alterar para a Tabela a ser Excluída ??
-            cSql = "DELETE FROM EUN022 where UN022_CODVIN = " & Integer.Parse(txtCodigo.Text)
+            cSql = "DELETE FROM EUN017 where UN017_CODOCP = " & Integer.Parse(txtCodigo.Text)
             cmd = New OleDbCommand(cSql, g_ConnectBanco)
 
             Try

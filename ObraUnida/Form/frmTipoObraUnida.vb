@@ -27,10 +27,12 @@ Public Class frmTipoObraUnida
         'Criar um adaptador que vai fazer o download de dados da base de dados
         '?? Alterar o Código para a Entidade Principal ??
 
-        If g_Param(1) = "INSERT" Then
-            cQueryCadastro = "SELECT * FROM EUN009"
+        cQueryCadastro = "SELECT * FROM EUN009 where UN009_TIPOBR = " '& g_Param(1) 'Parametro global do c
+
+        If g_Comando = "incluir" Then
+            cQueryCadastro += "0"
         Else
-            cQueryCadastro = "SELECT * FROM EUN009 where UN009_TIPOBR = " & g_Param(1) 'Parametro global do c
+            cQueryCadastro += g_Param(1)
         End If
 
         Using da As New OleDbDataAdapter()
@@ -43,6 +45,7 @@ Public Class frmTipoObraUnida
         If g_Param(1) <> "INSERT" Then
             'Posicionar no registro selecionado
             'Iniciar com o comando passado
+            
             If g_Comando = "incluir" Then
                 bIncluir = True
                 bAlterar = True
