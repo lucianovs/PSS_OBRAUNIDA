@@ -185,7 +185,7 @@ Partial Class frmTipoDeVinculo
         Me.txtCodigo.Location = New System.Drawing.Point(62, 60)
         Me.txtCodigo.MaxLength = 8
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(57, 20)
+        Me.txtCodigo.Size = New System.Drawing.Size(63, 20)
         Me.txtCodigo.TabIndex = 1
         '
         'txtDescricao
@@ -201,7 +201,7 @@ Partial Class frmTipoDeVinculo
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssContReg})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 251)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 259)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(454, 22)
         Me.StatusStrip1.TabIndex = 10
@@ -253,7 +253,7 @@ Partial Class frmTipoDeVinculo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 206)
+        Me.Label1.Location = New System.Drawing.Point(13, 208)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(153, 13)
         Me.Label1.TabIndex = 15
@@ -261,7 +261,7 @@ Partial Class frmTipoDeVinculo
         '
         'txtLoginUsuarioAlteracao
         '
-        Me.txtLoginUsuarioAlteracao.Location = New System.Drawing.Point(173, 206)
+        Me.txtLoginUsuarioAlteracao.Location = New System.Drawing.Point(173, 208)
         Me.txtLoginUsuarioAlteracao.Name = "txtLoginUsuarioAlteracao"
         Me.txtLoginUsuarioAlteracao.Size = New System.Drawing.Size(200, 20)
         Me.txtLoginUsuarioAlteracao.TabIndex = 16
@@ -270,7 +270,7 @@ Partial Class frmTipoDeVinculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 273)
+        Me.ClientSize = New System.Drawing.Size(454, 281)
         Me.Controls.Add(Me.txtLoginUsuarioAlteracao)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtpDataAlteracao)

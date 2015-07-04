@@ -22,7 +22,7 @@ Public Class frmOcupacoes
         If g_Comando = "incluir" Then
             cQuery += "0"
         Else
-            cQuery += g_Param(1)
+            cQuery += IIf(g_Param(1) = "INSERT", "0", g_Param(1)).ToString()
         End If
         Using da As New OleDbDataAdapter()
             da.SelectCommand = New OleDbCommand(cQuery, g_ConnectBanco)
@@ -69,29 +69,30 @@ Public Class frmOcupacoes
         'lblNmUsuario.Enabled = bAlterar And Me.Tag = 4 'And Me.Tag > 1
         txtCodigo.Enabled = False
         txtDescricao.Enabled = bAlterar
-        'cbNivOcp.Enabled = bAlterar
-        'chkAprAgr.Enabled = bAlterar
-        'chkAprIns.Enabled = bAlterar
+        cbSituacaoCadastro.Enabled = bAlterar
+        dtpDataAlteracao.Enabled = bAlterar
+        txtLoginUsuarioAlteracao.Enabled = bAlterar
 
+        Dim situacao As String
         'Preencher Campos
-        If i > -1 And Not bIncluir Then
+        If i > -1 And Not bIncluir And Not dt.Rows.Count = 0 Then
             txtCodigo.Text = dt.Rows(i).Item("UN020_CODOCP")
             txtDescricao.Text = dt.Rows(i).Item("UN020_DESOCP")
-            ' cbNivOcp.Text = IIf(IsDBNull(dt.Rows(i).Item("UN020_NIVOCP")), "CNB", dt.Rows(i).Item("UN020_NIVOCP"))
-            'chkAprAgr.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN020_APRAGR")), False, dt.Rows(i).Item("UN020_APRAGR") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN020_APRAGR")) Then
-                ' chkAprAgr.Checked = False
-            Else
-                ' chkAprAgr.Checked = dt.Rows(i).Item("UN020_APRAGR") = 1
+            situacao = dt.Rows(i).Item("UN020_SITCAD")
+
+            If (situacao = "A") Then
+                situacao = "ATIVO"
+            ElseIf (situacao = "I") Then
+                situacao = "INATIVO"
+            ElseIf (situacao = "E") Then
+                situacao = "EXCLUÍDO"
             End If
 
-            'chkAprIns.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN020_APRINS")), False, dt.Rows(i).Item("UN020_APRINS") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN020_APRINS")) Then
-                ' chkAprIns.Checked = False
-            Else
-                ' chkAprIns.Checked = dt.Rows(i).Item("UN020_APRINS") = 1
-            End If
+            cbSituacaoCadastro.Text = situacao
+            dtpDataAlteracao.Text = dt.Rows(i).Item("UN020_DATALT")
+            txtLoginUsuarioAlteracao.Text = dt.Rows(i).Item("UN020_USUALT")
 
+          
             'Verificar se é para excluir o registro comandado pelo browse
             If g_Comando = "excluir" Then
                 Call Excluir_Registro()
@@ -156,23 +157,43 @@ Public Class frmOcupacoes
         Dim cMensagem As String = ""
         Dim cmd As OleDbCommand
 
+        Dim Situacao As String
+
+        If cbSituacaoCadastro.SelectedItem = "ATIVO" Then
+            Situacao = "A"
+        ElseIf cbSituacaoCadastro.SelectedItem = "INATIVO" Then
+            Situacao = "I"
+        Else
+            Situacao = "E"
+        End If
+
         If ConectarBanco() Then
-            '?? Colocar o Comando SQL para Gravar (Update e Insert)
+
             If bIncluir Then
-                ' cSql = "INSERT INTO EUN020(UN020_CODOCP, UN020_DESOCP, UN020_NIVOCP, UN020_APRAGR, UN020_APRINS)"
-                ' cSql += " values (" & Integer.Parse(ProxCodChave("EUN020", "UN020_CODOCP")) & ", '" & _
-                '    txtDescricao.Text & "','" & cbNivOcp.Text & "'," & _
-                '    IIf(chkAprAgr.Checked, 1, 0).ToString & "," & _
-                '   IIf(chkAprIns.Checked, 1, 0).ToString & ")"
+
+                cSql = "INSERT INTO EUN020(" & _
+                    "UN020_CODOCP," & _
+                    "UN020_DESOCP," & _
+                    "UN020_SITCAD," & _
+                    "UN020_DATALT," & _
+                    "UN020_USUALT)"
+                cSql += " values (" &
+                    Integer.Parse(
+                    ProxCodChave("EUN020", "UN020_CODOCP")) & _
+                    ",'" & txtDescricao.Text & "'" & _
+                    ", '" & Situacao & "'" & _
+                    ", '" & dtpDataAlteracao.Text & "'" & _
+                    ", '" & txtLoginUsuarioAlteracao.Text & "')"
 
             ElseIf bAlterar Then
-                'cSql = "UPDATE EUN020 set UN020_DESOCP='" & txtDescricao.Text & "'" & _
-                '   ", UN020_NIVOCP='" & cbNivOcp.Text & "'" & _
-                '  ", UN020_APRAGR=" & IIf(chkAprAgr.Checked, 1, 0).ToString & _
-                '  ", UN020_APRINS=" & IIf(chkAprIns.Checked, 1, 0).ToString & _
-                '  " where UN020_CODOCP = " & Integer.Parse(txtCodigo.Text)
+                cSql = "UPDATE EUN020 set UN020_DESOCP='" & txtDescricao.Text & "'" & _
+                ", UN020_SITCAD ='" & Situacao & "'" & _
+                ", UN020_DATALT='" & dtpDataAlteracao.Text & "'" & _
+                ", UN020_USUALT='" & txtLoginUsuarioAlteracao.Text & "'" & _
+                 " WHERE UN020_CODOCP = " & Integer.Parse(txtCodigo.Text)
                 'acessoWEB=" & If(chkSIM.Checked = 0, False, True)
             End If
+
             cmd = New OleDbCommand(cSql, g_ConnectBanco)
 
             Try

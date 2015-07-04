@@ -42,10 +42,12 @@ Partial Class frmOcupacoes
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tssContReg = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDataAlteracao = New System.Windows.Forms.DateTimePicker()
         Me.lblDataAlteracao = New System.Windows.Forms.Label()
         Me.cbSituacaoCadastro = New System.Windows.Forms.ComboBox()
         Me.lblSituacao = New System.Windows.Forms.Label()
+        Me.txtLoginUsuarioAlteracao = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -193,7 +195,7 @@ Partial Class frmOcupacoes
         Me.txtDescricao.Location = New System.Drawing.Point(77, 98)
         Me.txtDescricao.MaxLength = 120
         Me.txtDescricao.Name = "txtDescricao"
-        Me.txtDescricao.Size = New System.Drawing.Size(291, 20)
+        Me.txtDescricao.Size = New System.Drawing.Size(296, 20)
         Me.txtDescricao.TabIndex = 3
         '
         'StatusStrip1
@@ -211,13 +213,13 @@ Partial Class frmOcupacoes
         Me.tssContReg.Size = New System.Drawing.Size(78, 17)
         Me.tssContReg.Text = "Registro n / n"
         '
-        'DateTimePicker1
+        'dtpDataAlteracao
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(116, 173)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(136, 20)
-        Me.DateTimePicker1.TabIndex = 24
+        Me.dtpDataAlteracao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDataAlteracao.Location = New System.Drawing.Point(116, 173)
+        Me.dtpDataAlteracao.Name = "dtpDataAlteracao"
+        Me.dtpDataAlteracao.Size = New System.Drawing.Size(136, 20)
+        Me.dtpDataAlteracao.TabIndex = 24
         '
         'lblDataAlteracao
         '
@@ -248,12 +250,30 @@ Partial Class frmOcupacoes
         Me.lblSituacao.TabIndex = 21
         Me.lblSituacao.Text = "Situação do Cadastro:"
         '
+        'txtLoginUsuarioAlteracao
+        '
+        Me.txtLoginUsuarioAlteracao.Location = New System.Drawing.Point(173, 213)
+        Me.txtLoginUsuarioAlteracao.Name = "txtLoginUsuarioAlteracao"
+        Me.txtLoginUsuarioAlteracao.Size = New System.Drawing.Size(200, 20)
+        Me.txtLoginUsuarioAlteracao.TabIndex = 26
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 213)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(153, 13)
+        Me.Label1.TabIndex = 25
+        Me.Label1.Text = "Login do Usuário da Alteração:"
+        '
         'frmOcupacoes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(449, 278)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.txtLoginUsuarioAlteracao)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.dtpDataAlteracao)
         Me.Controls.Add(Me.lblDataAlteracao)
         Me.Controls.Add(Me.cbSituacaoCadastro)
         Me.Controls.Add(Me.lblSituacao)
@@ -293,8 +313,10 @@ Partial Class frmOcupacoes
     Friend WithEvents txtDescricao As System.Windows.Forms.TextBox
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents tssContReg As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpDataAlteracao As System.Windows.Forms.DateTimePicker
     Friend WithEvents lblDataAlteracao As System.Windows.Forms.Label
     Friend WithEvents cbSituacaoCadastro As System.Windows.Forms.ComboBox
     Friend WithEvents lblSituacao As System.Windows.Forms.Label
+    Friend WithEvents txtLoginUsuarioAlteracao As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
