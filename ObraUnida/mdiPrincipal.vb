@@ -1,6 +1,13 @@
 ﻿Imports System.Windows.Forms
 Imports System.Data.OleDb
 
+Public Enum Comandos
+    Criar
+    Ler
+    Atualizar
+    Deletar
+End Enum
+
 Public Class mdiPrincipal
     Dim bUsarVPN As Boolean = IIf(LerDadosINI(nomeArquivoINI(), "VPN", "Ativar", "nao") = "nao", False, True)
 
@@ -9,6 +16,7 @@ Public Class mdiPrincipal
         Dim sNomeUsuario As String
         Dim bArguments As Boolean = True
         Dim x, y As Integer
+
 
         g_Modulo = "OBRAUNIDA"
 
@@ -70,19 +78,22 @@ Public Class mdiPrincipal
                 'Verificar o acesso às opções do sistema
                 Dim cModulo As Integer = getCodModulo(g_Modulo) 'Pegar o código do Módulo
                 Dim nCodUsuario As Integer = getCodUsuario(ClassCrypt.Decrypt(g_Login)) 'pegar o código do usuario
-
-                For Each _control As Object In Me.Controls
-                    If TypeOf (_control) Is MenuStrip Then
-                        For Each itm As ToolStripMenuItem In _control.items
-                            If itm.Text <> "&Sair" And itm.Name.ToString.StartsWith("menu") Then
-                                itm.Tag = NivelAcesso(nCodUsuario, cModulo, itm.Name, "")
-                                itm.Enabled = itm.Tag > 0
-                                'Função para Verificar os SubItens do menu
-                                If itm.DropDownItems.Count > 0 Then LoopMenuItems(itm, nCodUsuario, cModulo, itm.Name)
-                            End If
-                        Next
-                    End If
-                Next
+                Try
+                    For Each _control As Object In Me.Controls
+                        If TypeOf (_control) Is MenuStrip Then
+                            For Each itm As ToolStripMenuItem In _control.items
+                                If itm.Text <> "&Sair" And itm.Name.ToString.StartsWith("menu") Then
+                                    itm.Tag = NivelAcesso(nCodUsuario, cModulo, itm.Name, "")
+                                    itm.Enabled = itm.Tag > 0
+                                    'Função para Verificar os SubItens do menu
+                                    If itm.DropDownItems.Count > 0 Then LoopMenuItems(itm, nCodUsuario, cModulo, itm.Name)
+                                End If
+                            Next
+                        End If
+                    Next
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
             Else
                 Application.Exit()
             End If
@@ -92,22 +103,26 @@ Public Class mdiPrincipal
 
     Private Function LoopMenuItems(ByVal parent As ToolStripMenuItem, nCodUsuario As Integer, cModulo As Integer, fPrincOpcao As String) As Object
         Dim retval As Object = Nothing
+        Try
 
-        For Each child As Object In parent.DropDownItems
+        
+            For Each child As Object In parent.DropDownItems
 
-            'MessageBox.Show("Child : " & child.name)
-
-            If TypeOf (child) Is ToolStripMenuItem Then
-                If child.Text <> "Sair" And child.Name.ToString.StartsWith("menu") Then
-                    child.Tag = NivelAcesso(nCodUsuario, cModulo, child.Name, fPrincOpcao)
-                    child.Enabled = child.Tag > 0
-                    If child.DropDownItems.Count > 0 Then
-                        retval = LoopMenuItems(child, nCodUsuario, cModulo, child.name)
-                        If Not retval Is Nothing Then Exit For
+                'MessageBox.Show("Child : " & child.name)
+                If TypeOf (child) Is ToolStripMenuItem Then
+                    If child.Text <> "Sair" And child.Name.ToString.StartsWith("menu") Then
+                        child.Tag = NivelAcesso(nCodUsuario, cModulo, child.Name, fPrincOpcao)
+                        child.Enabled = child.Tag > 0
+                        If child.DropDownItems.Count > 0 Then
+                            retval = LoopMenuItems(child, nCodUsuario, cModulo, child.name)
+                            If Not retval Is Nothing Then Exit For
+                        End If
                     End If
                 End If
-            End If
-        Next
+            Next
+        Catch ex As Exception
+
+        End Try
 
         Return retval
     End Function

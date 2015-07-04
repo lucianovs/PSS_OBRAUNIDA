@@ -22,7 +22,7 @@ Public Class frmTipoDeVinculo
         If g_Comando = "incluir" Then
             cQuery += "0"
         Else
-            cQuery += g_Param(1)
+            cQuery += IIf(g_Param(1) = "INSERT", "0", g_Param(1)).ToString()
         End If
         Using da As New OleDbDataAdapter()
             da.SelectCommand = New OleDbCommand(cQuery, g_ConnectBanco)
@@ -69,12 +69,30 @@ Public Class frmTipoDeVinculo
         'lblNmUsuario.Enabled = bAlterar And Me.Tag = 4 'And Me.Tag > 1
         txtCodigo.Enabled = False
         txtDescricao.Enabled = bAlterar
+        cbSituacaoCadastro.Enabled = bAlterar
+        dtpDataAlteracao.Enabled = bAlterar
+        txtLoginUsuarioAlteracao.Enabled = bAlterar
+
+        Dim situacao As String
 
         'Preencher Campos
-        If i > -1 And Not bIncluir Then
+        If i > -1 And Not bIncluir And Not dt.Rows.Count = 0 Then
             txtCodigo.Text = dt.Rows(i).Item("UN022_CODVIN")
             txtDescricao.Text = dt.Rows(i).Item("UN022_DESVIN")
-                
+            situacao = dt.Rows(i).Item("UN022_SITCAD")
+
+            If (situacao = "A") Then
+                situacao = "ATIVO"
+            ElseIf (situacao = "I") Then
+                situacao = "INATIVO"
+            ElseIf (situacao = "E") Then
+                situacao = "EXCLUÍDO"
+            End If
+
+            cbSituacaoCadastro.Text = situacao
+            dtpDataAlteracao.Text = dt.Rows(i).Item("UN022_DATALT")
+            txtLoginUsuarioAlteracao.Text = dt.Rows(i).Item("UN022_USUALT")
+
             'Verificar se é para excluir o registro comandado pelo browse
             If g_Comando = "excluir" Then
                 Call Excluir_Registro()
@@ -154,7 +172,6 @@ Public Class frmTipoDeVinculo
             '?? Colocar o Comando SQL para Gravar (Update e Insert)
             If bIncluir Then
                
-
                 cSql = "INSERT INTO EUN022(" & _
                     "UN022_CODVIN," & _
                     "UN022_DESVIN," & _

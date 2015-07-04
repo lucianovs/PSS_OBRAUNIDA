@@ -44,7 +44,7 @@ Partial Class frmFuncoes
         Me.tssContReg = New System.Windows.Forms.ToolStripStatusLabel()
         Me.txtLoginUsuarioAlteracao = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDataAlteracao = New System.Windows.Forms.DateTimePicker()
         Me.lblDataAlteracao = New System.Windows.Forms.Label()
         Me.cbSituacaoCadastro = New System.Windows.Forms.ComboBox()
         Me.lblSituacao = New System.Windows.Forms.Label()
@@ -229,13 +229,13 @@ Partial Class frmFuncoes
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Login do Usuário da Alteração:"
         '
-        'DateTimePicker1
+        'dtpDataAlteracao
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(116, 174)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(136, 20)
-        Me.DateTimePicker1.TabIndex = 20
+        Me.dtpDataAlteracao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDataAlteracao.Location = New System.Drawing.Point(116, 174)
+        Me.dtpDataAlteracao.Name = "dtpDataAlteracao"
+        Me.dtpDataAlteracao.Size = New System.Drawing.Size(136, 20)
+        Me.dtpDataAlteracao.TabIndex = 20
         '
         'lblDataAlteracao
         '
@@ -273,7 +273,7 @@ Partial Class frmFuncoes
         Me.ClientSize = New System.Drawing.Size(555, 294)
         Me.Controls.Add(Me.txtLoginUsuarioAlteracao)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.dtpDataAlteracao)
         Me.Controls.Add(Me.lblDataAlteracao)
         Me.Controls.Add(Me.cbSituacaoCadastro)
         Me.Controls.Add(Me.lblSituacao)
@@ -315,7 +315,7 @@ Partial Class frmFuncoes
     Friend WithEvents tssContReg As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents txtLoginUsuarioAlteracao As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpDataAlteracao As System.Windows.Forms.DateTimePicker
     Friend WithEvents lblDataAlteracao As System.Windows.Forms.Label
     Friend WithEvents cbSituacaoCadastro As System.Windows.Forms.ComboBox
     Friend WithEvents lblSituacao As System.Windows.Forms.Label

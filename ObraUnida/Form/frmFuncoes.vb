@@ -18,11 +18,11 @@ Public Class frmFuncoes
     Private Sub frmFuncoes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Criar um adaptador que vai fazer o download de dados da base de dados
         '?? Alterar o Código para a Entidade Principal ??
-        cQuery = "SELECT * FROM EUN017 where UN017_CODOCP = "
+        cQuery = "SELECT * FROM EUN017 where UN017_CODFUN = "
         If g_Comando = "incluir" Then
             cQuery += "0"
         Else
-            cQuery += g_Param(1)
+            cQuery += IIf(g_Param(1) = "INSERT", "0", g_Param(1)).ToString()
         End If
         Using da As New OleDbDataAdapter()
             da.SelectCommand = New OleDbCommand(cQuery, g_ConnectBanco)
@@ -69,28 +69,30 @@ Public Class frmFuncoes
         'lblNmUsuario.Enabled = bAlterar And Me.Tag = 4 'And Me.Tag > 1
         txtCodigo.Enabled = False
         txtDescricao.Enabled = bAlterar
-        'cbNivOcp.Enabled = bAlterar
-        'chkAprAgr.Enabled = bAlterar
-        'chkAprIns.Enabled = bAlterar
+        cbSituacaoCadastro.Enabled = bAlterar
+        dtpDataAlteracao.Enabled = bAlterar
+        txtLoginUsuarioAlteracao.Enabled = bAlterar
+
+        Dim situacao As String
+        
 
         'Preencher Campos
-        If i > -1 And Not bIncluir Then
-            txtCodigo.Text = dt.Rows(i).Item("UN017_CODOCP")
-            txtDescricao.Text = dt.Rows(i).Item("UN017_DESOCP")
-            'cbNivOcp.Text = IIf(IsDBNull(dt.Rows(i).Item("UN017_NIVOCP")), "CNB", dt.Rows(i).Item("UN017_NIVOCP"))
-            'chkAprAgr.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN017_APRAGR")), False, dt.Rows(i).Item("UN017_APRAGR") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN017_APRAGR")) Then
-                '   chkAprAgr.Checked = False
-            Else
-                '    chkAprAgr.Checked = dt.Rows(i).Item("UN017_APRAGR") = 1
+        If i > -1 And Not bIncluir And Not dt.Rows.Count = 0 Then
+            txtCodigo.Text = dt.Rows(i).Item("UN017_CODFUN")
+            txtDescricao.Text = dt.Rows(i).Item("UN017_DESFUN")
+            situacao = dt.Rows(i).Item("UN017_SITCAD")
+
+            If (situacao = "A") Then
+                situacao = "ATIVO"
+            ElseIf (situacao = "I") Then
+                situacao = "INATIVO"
+            ElseIf (situacao = "E") Then
+                situacao = "EXCLUÍDO"
             End If
 
-            'chkAprIns.Checked = IIf(IsDBNull(dt.Rows(i).Item("UN017_APRINS")), False, dt.Rows(i).Item("UN017_APRINS") = 1)
-            If IsDBNull(dt.Rows(i).Item("UN017_APRINS")) Then
-                ' chkAprIns.Checked = False
-            Else
-                ' chkAprIns.Checked = dt.Rows(i).Item("UN017_APRINS") = 1
-            End If
+            cbSituacaoCadastro.Text = situacao
+            dtpDataAlteracao.Text = dt.Rows(i).Item("UN017_DATALT")
+            txtLoginUsuarioAlteracao.Text = dt.Rows(i).Item("UN017_USUALT")
 
             'Verificar se é para excluir o registro comandado pelo browse
             If g_Comando = "excluir" Then
@@ -145,6 +147,7 @@ Public Class frmFuncoes
 
         'Inicializar os seus Componentes de Entrada de Dados
         txtCodigo.Text = "auto"
+        txtCodigo.Enabled = False
         txtDescricao.Text = ""
 
         If Not g_Comando = "incluir" Then Call TratarObjetos()
@@ -156,21 +159,40 @@ Public Class frmFuncoes
         Dim cMensagem As String = ""
         Dim cmd As OleDbCommand
 
+        Dim Situacao As String
+
+        If cbSituacaoCadastro.SelectedItem = "ATIVO" Then
+            Situacao = "A"
+        ElseIf cbSituacaoCadastro.SelectedItem = "INATIVO" Then
+            Situacao = "I"
+        Else
+            Situacao = "E"
+        End If
+
         If ConectarBanco() Then
-            '?? Colocar o Comando SQL para Gravar (Update e Insert)
+            '?? Colocar o Comando SQL para Gravar (Update e Insert)    
             If bIncluir Then
-                ' cSql = "INSERT INTO EUN017(UN017_CODOCP, UN017_DESOCP, UN017_NIVOCP, UN017_APRAGR, UN017_APRINS)"
-                '    cSql += " values (" & Integer.Parse(ProxCodChave("EUN017", "UN017_CODOCP")) & ", '" & _
-                'txtDescricao.Text & "','" & cbNivOcp.Text & "'," & _
-                'IIf(chkAprAgr.Checked, 1, 0).ToString & "," & _
-                'IIf(chkAprIns.Checked, 1, 0).ToString & ")"
+
+                cSql = "INSERT INTO EUN017(" & _
+                    "UN017_CODFUN," & _
+                    "UN017_DESFUN," & _
+                    "UN017_SITCAD," & _
+                    "UN017_DATALT," & _
+                    "UN017_USUALT)"
+                cSql += " values (" &
+                    Integer.Parse(
+                    ProxCodChave("EUN017", "UN017_CODFUN")) & _
+                    ",'" & txtDescricao.Text & "'" & _
+                    ", '" & Situacao & "'" & _
+                    ", '" & dtpDataAlteracao.Text & "'" & _
+                    ", '" & txtLoginUsuarioAlteracao.Text & "')"
 
             ElseIf bAlterar Then
-                ' cSql = "UPDATE EUN017 set UN017_DESOCP='" & txtDescricao.Text & "'" & _
-                '     ", UN017_NIVOCP='" & cbNivOcp.Text & "'" & _
-                '     ", UN017_APRAGR=" & IIf(chkAprAgr.Checked, 1, 0).ToString & _
-                '     ", UN017_APRINS=" & IIf(chkAprIns.Checked, 1, 0).ToString & _
-                '   " where UN017_CODOCP = " & Integer.Parse(txtCodigo.Text)
+                cSql = "UPDATE EUN017 set UN017_DESFUN='" & txtDescricao.Text & "'" & _
+                ", UN017_SITCAD ='" & Situacao & "'" & _
+                ", UN017_DATALT='" & dtpDataAlteracao.Text & "'" & _
+                ", UN017_USUALT='" & txtLoginUsuarioAlteracao.Text & "'" & _
+                 " WHERE UN017_CODFUN = " & Integer.Parse(txtCodigo.Text)
                 'acessoWEB=" & If(chkSIM.Checked = 0, False, True)
             End If
             cmd = New OleDbCommand(cSql, g_ConnectBanco)
@@ -223,7 +245,7 @@ Public Class frmFuncoes
 
         If MsgBox("Deseja excluir este registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "cadastro de Usuarios") = MsgBoxResult.Yes Then
             '?? Alterar para a Tabela a ser Excluída ??
-            cSql = "DELETE FROM EUN017 where UN017_CODOCP = " & Integer.Parse(txtCodigo.Text)
+            cSql = "DELETE FROM EUN017 where UN017_CODFUN = " & Integer.Parse(txtCodigo.Text)
             cmd = New OleDbCommand(cSql, g_ConnectBanco)
 
             Try
