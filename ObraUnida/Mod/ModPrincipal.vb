@@ -2,6 +2,7 @@
 Imports System.Data.OleDb
 Imports System.IO
 Imports System.Text
+Imports Microsoft.VisualBasic
 
 Module ModPrincipal
     'Declaração das variáveis Globais
@@ -12,6 +13,15 @@ Module ModPrincipal
     Public g_Nivel As Integer
     Public g_AtuBrowse As Boolean 'Variavel para identificar se deve atualiza o browse no timer
 
+    ' Enum para identificar o comando.
+    Public Enum Comandos
+        Incluir
+        Ler
+        Alterar
+        Excluir
+    End Enum
+
+    'TODO: Trocar a variável g_Param para Enumeração ( evita erros de digitação )
     'Guarda os parâmetros para passar do Browse para aos cadastros
     Public g_Param(6) As String
     'Definição do Projeto (Deve ser incializado no Load do Form Principal e ter o mesmo nome do projeto (Sensitivo)
@@ -21,6 +31,8 @@ Module ModPrincipal
     'Variável para Identificar a Estrutura para Inserir Unidades
     Public g_Unidade As String
     'Variavel para o DialogBox da Impressora
+
+
 
 
     'Variáveis utilizados na Pesquisa de registros

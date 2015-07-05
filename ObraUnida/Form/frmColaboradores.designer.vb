@@ -758,9 +758,9 @@ Partial Class frmColaboradores
         '
         'btnLocUnidade
         '
-        Me.btnLocUnidade.BackgroundImage = Global.ObraUnida.My.Resources.Resources.AllDay_ru_Search
+        Me.btnLocUnidade.BackgroundImage = Global.OBRAUNIDA.My.Resources.Resources.AllDay_ru_Search
         Me.btnLocUnidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLocUnidade.Image = Global.ObraUnida.My.Resources.Resources.AllDay_ru_Search
+        Me.btnLocUnidade.Image = Global.OBRAUNIDA.My.Resources.Resources.AllDay_ru_Search
         Me.btnLocUnidade.Location = New System.Drawing.Point(758, 60)
         Me.btnLocUnidade.Name = "btnLocUnidade"
         Me.btnLocUnidade.Size = New System.Drawing.Size(28, 23)

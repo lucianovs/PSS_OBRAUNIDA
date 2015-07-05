@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A4F7B2CB-9B36-4D87-ABE3-E9F943FDA67A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ObraUnida.My.MyApplication</StartupObject>
-    <RootNamespace>ObraUnida</RootNamespace>
-    <AssemblyName>ObraUnida</AssemblyName>
+    <StartupObject>OBRAUNIDA.My.MyApplication</StartupObject>
+    <RootNamespace>OBRAUNIDA</RootNamespace>
+    <AssemblyName>OBRAUNIDA</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -20,7 +20,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ObraUnida.xml</DocumentationFile>
+    <DocumentationFile>OBRAUNIDA.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +30,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ObraUnida.xml</DocumentationFile>
+    <DocumentationFile>OBRAUNIDA.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -45,22 +45,25 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Obras Unidas.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\dotnet\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\dotnet\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\dotnet\dotnet\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\dotnet\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,6 +104,42 @@
     <Compile Include="dlgUnidade.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmFuncoes.designer.vb">
+      <DependentUpon>frmFuncoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmFuncoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmOcupacoes.designer.vb">
+      <DependentUpon>frmOcupacoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmOcupacoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmContasDoOrcamento.designer.vb">
+      <DependentUpon>frmContasDoOrcamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmContasDoOrcamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmTipoDeVinculo.designer.vb">
+      <DependentUpon>frmTipoDeVinculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmTipoDeVinculo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmTipoDeOcupacao.designer.vb">
+      <DependentUpon>frmTipoDeOcupacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmTipoDeOcupacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmTipoObraUnida.designer.vb">
+      <DependentUpon>frmTipoObraUnida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmTipoObraUnida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\frmUnidades.designer.vb">
       <DependentUpon>frmUnidades.vb</DependentUpon>
     </Compile>
@@ -131,12 +170,6 @@
     <Compile Include="Form\frmColaboradores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.designer.vb">
-      <DependentUpon>frmPrincipal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrincipal.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form\frmReportViewer.designer.vb">
       <DependentUpon>frmReportViewer.vb</DependentUpon>
     </Compile>
@@ -147,6 +180,12 @@
       <DependentUpon>frmRelUnidades.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRelUnidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdiPrincipal.Designer.vb">
+      <DependentUpon>mdiPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mdiPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mod\ModPrincipal.vb" />
@@ -179,6 +218,24 @@
     <EmbeddedResource Include="dlgUnidade.resx">
       <DependentUpon>dlgUnidade.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmFuncoes.resx">
+      <DependentUpon>frmFuncoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmOcupacoes.resx">
+      <DependentUpon>frmOcupacoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmContasDoOrcamento.resx">
+      <DependentUpon>frmContasDoOrcamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmTipoDeVinculo.resx">
+      <DependentUpon>frmTipoDeVinculo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmTipoDeOcupacao.resx">
+      <DependentUpon>frmTipoDeOcupacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmTipoObraUnida.resx">
+      <DependentUpon>frmTipoObraUnida.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmUnidades.resx">
       <DependentUpon>frmUnidades.vb</DependentUpon>
     </EmbeddedResource>
@@ -194,14 +251,14 @@
     <EmbeddedResource Include="Form\frmColaboradores.resx">
       <DependentUpon>frmColaboradores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmReportViewer.resx">
       <DependentUpon>frmReportViewer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRelUnidades.resx">
       <DependentUpon>frmRelUnidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdiPrincipal.resx">
+      <DependentUpon>mdiPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -227,6 +284,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AllDay.ru_Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Obras Unidas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppData\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
