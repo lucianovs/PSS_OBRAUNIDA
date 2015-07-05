@@ -64,9 +64,7 @@ Public Class frmOcupacoes
         'Campos
         '?? Alterar para os seus objetos da Tela ??
         lblCodigo.Enabled = False
-        lblDescricao.Enabled = bAlterar
-        'lblNivOcp.Enabled = bAlterar
-        'lblNmUsuario.Enabled = bAlterar And Me.Tag = 4 'And Me.Tag > 1
+        lblDescricao.Enabled = bAlterar     
         txtCodigo.Enabled = False
         txtDescricao.Enabled = bAlterar
         cbSituacaoCadastro.Enabled = bAlterar

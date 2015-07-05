@@ -44,12 +44,12 @@ Partial Class frmContasDoOrcamento
         Me.tssContReg = New System.Windows.Forms.ToolStripStatusLabel()
         Me.txtLoginUsuarioAlteracao = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDataAlteracao = New System.Windows.Forms.DateTimePicker()
         Me.lblDataAlteracao = New System.Windows.Forms.Label()
         Me.cbSituacaoCadastro = New System.Windows.Forms.ComboBox()
         Me.lblSituacao = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbTipoConta = New System.Windows.Forms.ComboBox()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -231,13 +231,13 @@ Partial Class frmContasDoOrcamento
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Login do Usuário da Alteração:"
         '
-        'DateTimePicker1
+        'dtpDataAlteracao
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(116, 216)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(136, 20)
-        Me.DateTimePicker1.TabIndex = 26
+        Me.dtpDataAlteracao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDataAlteracao.Location = New System.Drawing.Point(116, 216)
+        Me.dtpDataAlteracao.Name = "dtpDataAlteracao"
+        Me.dtpDataAlteracao.Size = New System.Drawing.Size(136, 20)
+        Me.dtpDataAlteracao.TabIndex = 26
         '
         'lblDataAlteracao
         '
@@ -277,27 +277,27 @@ Partial Class frmContasDoOrcamento
         Me.Label2.TabIndex = 29
         Me.Label2.Text = "Tipo da Conta:"
         '
-        'ComboBox1
+        'cbTipoConta
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"RECEITA", "DESPESA"})
-        Me.ComboBox1.Location = New System.Drawing.Point(95, 136)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 30
+        Me.cbTipoConta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTipoConta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbTipoConta.FormattingEnabled = True
+        Me.cbTipoConta.Items.AddRange(New Object() {"RECEITA", "DESPESA"})
+        Me.cbTipoConta.Location = New System.Drawing.Point(95, 136)
+        Me.cbTipoConta.Name = "cbTipoConta"
+        Me.cbTipoConta.Size = New System.Drawing.Size(121, 21)
+        Me.cbTipoConta.TabIndex = 30
         '
         'frmContasDoOrcamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(561, 330)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbTipoConta)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtLoginUsuarioAlteracao)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.dtpDataAlteracao)
         Me.Controls.Add(Me.lblDataAlteracao)
         Me.Controls.Add(Me.cbSituacaoCadastro)
         Me.Controls.Add(Me.lblSituacao)
@@ -339,10 +339,10 @@ Partial Class frmContasDoOrcamento
     Friend WithEvents tssContReg As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents txtLoginUsuarioAlteracao As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpDataAlteracao As System.Windows.Forms.DateTimePicker
     Friend WithEvents lblDataAlteracao As System.Windows.Forms.Label
     Friend WithEvents cbSituacaoCadastro As System.Windows.Forms.ComboBox
     Friend WithEvents lblSituacao As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbTipoConta As System.Windows.Forms.ComboBox
 End Class
