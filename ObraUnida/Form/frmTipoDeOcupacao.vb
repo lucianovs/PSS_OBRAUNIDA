@@ -13,6 +13,7 @@ Public Class frmTipoDeOcupacao
     Private Sub frmTipoDeOcupacao_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         g_Param(1) = txtCodigo.Text 'Voltar com a Chave do registro do formulário
         g_AtuBrowse = True
+        g_Comando = "REFRESH" 'Forçar a atualização do browser pelo timer
     End Sub
 
     Private Sub frmTipoDeOcupacao_Load(sender As Object, e As EventArgs) Handles MyBase.Load

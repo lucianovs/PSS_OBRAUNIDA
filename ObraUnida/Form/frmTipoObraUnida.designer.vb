@@ -218,7 +218,7 @@ Partial Class frmTipoObraUnida
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmTipoObraUnida"
-        Me.Text = "Tipo de Vínculo"
+        Me.Text = "Tipo de Obra Unida"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)

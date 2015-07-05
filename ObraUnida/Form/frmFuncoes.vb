@@ -13,6 +13,7 @@ Public Class frmFuncoes
     Private Sub frmFuncoes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         g_Param(1) = txtCodigo.Text 'Voltar com a Chave do registro do formulário
         g_AtuBrowse = True
+        g_Comando = "REFRESH" 'Forçar a atualização do browser pelo timer
     End Sub
 
     Private Sub frmFuncoes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -218,7 +219,7 @@ Public Class frmFuncoes
                         da.Fill(dt)
                     End Using
                     'Verificar se o comando veio do browse
-                    If bIncluir Or bAlterar Then
+                    If g_Comando = "incluir" Or g_Comando = "alterar" Then
                         dt.Clear()
                         Me.Close()
                     Else
